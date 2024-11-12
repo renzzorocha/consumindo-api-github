@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function success() {
+        let obj = JSON.parse(this.responseText);
+        let texto = alert(
+          `Nome do Usuário: ${obj.name} \nLogin do Usuário: ${obj.login} `
+        );
+      }
+      const xhr = new XMLHttpRequest();
+      xhr.onload = success;
+      xhr.open("GET", "https://api.github.com/users/renzzorocha");
+      xhr.send();
+    </script>
+  </body>
+</html>
